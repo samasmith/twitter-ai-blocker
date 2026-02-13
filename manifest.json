@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "X / Twitter AI Post Blocker",
+  "version": "1.0.0",
+  "description": "Hides posts from your X (Twitter) feed that talk about AI",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://twitter.com/*",
+    "https://www.twitter.com/*",
+    "https://x.com/*",
+    "https://www.x.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "X / Twitter AI Post Blocker"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://twitter.com/*",
+        "https://www.twitter.com/*",
+        "https://x.com/*",
+        "https://www.x.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
